@@ -5,10 +5,15 @@
 #include <QtCore>
 #include <QtGui>
 #include <QFileDialog>
+<<<<<<< HEAD
 #include<QFont>
 #include"texteditpredictor.h"
 #include"dictnode.H"
 #include"vbuscar.h"
+=======
+#include"texteditpredictor.h"
+#include"dictnode.H"
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
 
 namespace Ui {
 class ventanapredictor;
@@ -47,6 +52,7 @@ private slots:
 
     void on_textEditor_textChanged();
 
+<<<<<<< HEAD
     void on_actionTexto_Rojo_triggered();
 
     void on_actionTexto_Azul_triggered();
@@ -91,6 +97,8 @@ private slots:
 
     void signalRA(const QString textA);
 
+=======
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
 private:
     Ui::ventanapredictor *ui;
 
@@ -98,10 +106,14 @@ private:
     texteditpredictor *TextEditor;
     Cnode *nodo = new Cnode('-');
     QString texto;
+<<<<<<< HEAD
     QString currentBackground;
     QString currentTextType;
     vbuscar *buscar;
 
+=======
+    //QStringList lista;
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
 };
 
 #endif // VENTANAPREDICTOR_H

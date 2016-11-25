@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD:textpredictor/textpredictor.pro.user
 <!-- Written by QtCreator 3.5.1, 2016-11-25T11:22:31. -->
+=======
+<!-- Written by QtCreator 3.5.1, 2016-11-11T00:00:14. -->
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58:prueba/prueba.pro.user
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>

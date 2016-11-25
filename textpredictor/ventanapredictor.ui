@@ -20,7 +20,11 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
+<<<<<<< HEAD
      <height>27</height>
+=======
+     <height>20</height>
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -46,6 +50,7 @@
     <addaction name="actionDeshacer"/>
     <addaction name="actionRehacer"/>
    </widget>
+<<<<<<< HEAD
    <widget class="QMenu" name="menuPreferencias_2">
     <property name="title">
      <string>Preferencias</string>
@@ -111,6 +116,10 @@
    <addaction name="menuEdicion"/>
    <addaction name="menuPreferencias_2"/>
    <addaction name="menuHerramientas"/>
+=======
+   <addaction name="menuArchivo"/>
+   <addaction name="menuEdicion"/>
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNuevo">
@@ -163,6 +172,7 @@
     <string>Rehacer</string>
    </property>
   </action>
+<<<<<<< HEAD
   <action name="actionTexto_Rojo">
    <property name="text">
     <string>Texto Rojo</string>
@@ -288,6 +298,8 @@
     <string>Buscar</string>
    </property>
   </action>
+=======
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
  </widget>
  <resources/>
  <connections>

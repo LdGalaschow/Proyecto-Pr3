@@ -2,7 +2,11 @@
 #include "ui_ventanapredictor.h"
 
 ventanapredictor::ventanapredictor(QWidget *parent) :
+<<<<<<< HEAD
     QMainWindow(parent), completer(0), buscar(nullptr),
+=======
+    QMainWindow(parent), completer(0),
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
     ui(new Ui::ventanapredictor)
 {
     ui->setupUi(this);
@@ -13,12 +17,21 @@ ventanapredictor::ventanapredictor(QWidget *parent) :
     QStringListModel *model = new QStringListModel(stringList);
     completer = new QCompleter(model, this);
 
+<<<<<<< HEAD
+=======
+    //completer = new QCompleter(lista, this);
+    //completer->setModel(modelFromFile(":/resources/wordlist.txt"));
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
     completer->setModelSorting(QCompleter::CaseInsensitivelySortedModel);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     completer->setWrapAround(false);
     TextEditor->setCompleter(completer);
     connect(TextEditor,SIGNAL(textChanged()),this,SLOT(on_textEditor_textChanged()));
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
     setCentralWidget(TextEditor);
     resize(800, 500);
     setWindowTitle(tr("TextPredictor"));
@@ -31,7 +44,18 @@ ventanapredictor::~ventanapredictor()
 
 void ventanapredictor::on_actionNuevo_triggered()
 {
+<<<<<<< HEAD
     TextEditor->setPlainText("");
+=======
+    Cnode *node = new Cnode('a');
+    nodo->insert_child(node);
+    //std::string aux;
+    Cnode *aux = nodo->search_child('a');
+    std::string aux2;
+    aux2 = (aux->symbol());
+    texto = QString::fromStdString(aux2);
+    TextEditor->setPlainText(texto);
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
 }
 
 void ventanapredictor::on_actionAbrir_triggered()
@@ -176,6 +200,7 @@ void ventanapredictor::on_textEditor_textChanged()
            lista << QString::fromStdString(palabra);
        });
 
+<<<<<<< HEAD
        QStringListModel *model = (QStringListModel*)(completer->model());
        model->setStringList(lista);
 
@@ -348,4 +373,13 @@ void ventanapredictor::signalR(const QString text)
 void ventanapredictor::signalRA(const QString textA)
 {
     TextEditor->find(textA);
+=======
+
+       //completer = new QCompleter(lista,this);  //AGREGADO COMPLETER
+       QStringListModel *model = (QStringListModel*)(completer->model());
+
+
+       model->setStringList(lista);
+
+>>>>>>> f3a80b233ab9723f0252b8a0d20cebe8af18cb58
 }
