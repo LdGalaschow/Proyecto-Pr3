@@ -60,11 +60,6 @@
      <addaction name="actionTexto_Morado"/>
      <addaction name="actionTexto_Negro"/>
     </widget>
-    <widget class="QMenu" name="menuType_Here">
-     <property name="title">
-      <string>Type Here</string>
-     </property>
-    </widget>
     <widget class="QMenu" name="menuTipo_de_Letra_2">
      <property name="title">
       <string>Tipo de Letra</string>
@@ -73,6 +68,7 @@
      <addaction name="actionHelvetica_Cronyx"/>
      <addaction name="actionCourier"/>
      <addaction name="actionOldEnglish"/>
+     <addaction name="actionPor_Defecto_Monospace"/>
     </widget>
     <widget class="QMenu" name="menuTama_o_de_Letra_2">
      <property name="title">
@@ -99,13 +95,13 @@
     <addaction name="menuTama_o_de_Letra_2"/>
     <addaction name="separator"/>
     <addaction name="menuTemas_2"/>
-    <addaction name="menuType_Here"/>
    </widget>
    <widget class="QMenu" name="menuHerramientas">
     <property name="title">
      <string>Herramientas</string>
     </property>
     <addaction name="actionBuscar"/>
+    <addaction name="actionMostrar_Diccionario"/>
    </widget>
    <addaction name="menuArchivo"/>
    <addaction name="menuEdicion"/>
@@ -283,9 +279,19 @@
     <string>h</string>
    </property>
   </action>
+  <action name="actionPor_Defecto_Monospace">
+   <property name="text">
+    <string>Por Defecto (Monospace)</string>
+   </property>
+  </action>
   <action name="actionBuscar">
    <property name="text">
     <string>Buscar</string>
+   </property>
+  </action>
+  <action name="actionMostrar_Diccionario">
+   <property name="text">
+    <string>Mostrar Diccionario</string>
    </property>
   </action>
  </widget>

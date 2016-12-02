@@ -19,6 +19,11 @@ ventanapredictor::ventanapredictor(QWidget *parent) :
     TextEditor->setCompleter(completer);
     connect(TextEditor,SIGNAL(textChanged()),this,SLOT(on_textEditor_textChanged()));
 
+    currentTextType = "Monospace";
+    QFont f("Monospace",10, QFont::Normal);
+    TextEditor->setFont(f);
+    CurrentTextSize = 10;
+
     setCentralWidget(TextEditor);
     resize(800, 500);
     setWindowTitle(tr("TextPredictor"));
@@ -167,7 +172,6 @@ void ventanapredictor::on_textEditor_textChanged()
 
        flag = 0;
 
-
        DynList<string> auxlist = nodo->search_words(busqueda.toStdString());
 
        QStringList lista; //AGREGADO COMPLETER
@@ -240,28 +244,28 @@ void ventanapredictor::on_actionBlack_Orange_triggered()
 void ventanapredictor::on_actionTimes_triggered()
 {
     currentTextType = "Times";
-    QFont serifFont("Times", 13, QFont::Normal);
+    QFont serifFont("Times", CurrentTextSize, QFont::Normal);
     TextEditor->setFont(serifFont);
 }
 
 void ventanapredictor::on_actionHelvetica_Cronyx_triggered()
 {
     currentTextType = "Helvetica";
-    QFont f("Helvetica",12, QFont::DemiBold);
+    QFont f("Helvetica",CurrentTextSize, QFont::DemiBold);
     TextEditor->setFont(f);
 }
 
 void ventanapredictor::on_actionCourier_triggered()
 {
     currentTextType = "Courier";
-    QFont f("Courier",13, QFont::Normal);
+    QFont f("Courier",CurrentTextSize, QFont::Normal);
     TextEditor->setFont(f);
 }
 
 void ventanapredictor::on_actionOldEnglish_triggered()
 {
     currentTextType = "OldEnglish";
-    QFont f("OldEnglish",12, QFont::Normal);
+    QFont f("OldEnglish",CurrentTextSize, QFont::Normal);
     TextEditor->setFont(f);
 }
 
@@ -271,11 +275,13 @@ void ventanapredictor::on_action10_triggered()
     {
         QFont f(currentTextType,10, QFont::DemiBold);
         TextEditor->setFont(f);
+        CurrentTextSize = 10;
     }
     else
     {
         QFont f(currentTextType,10, QFont::Normal);
         TextEditor->setFont(f);
+        CurrentTextSize = 10;
     }
 }
 
@@ -285,11 +291,13 @@ void ventanapredictor::on_action12_triggered()
     {
         QFont f(currentTextType,12, QFont::DemiBold);
         TextEditor->setFont(f);
+        CurrentTextSize = 12;
     }
     else
     {
         QFont f(currentTextType,12, QFont::Normal);
         TextEditor->setFont(f);
+        CurrentTextSize = 12;
     }
 }
 
@@ -299,11 +307,13 @@ void ventanapredictor::on_action14_triggered()
     {
         QFont f(currentTextType,14, QFont::DemiBold);
         TextEditor->setFont(f);
+        CurrentTextSize = 14;
     }
     else
     {
         QFont f(currentTextType,14, QFont::Normal);
         TextEditor->setFont(f);
+        CurrentTextSize = 14;
     }
 }
 
@@ -313,11 +323,13 @@ void ventanapredictor::on_action16_triggered()
     {
         QFont f(currentTextType,16, QFont::DemiBold);
         TextEditor->setFont(f);
+        CurrentTextSize = 16;
     }
     else
     {
         QFont f(currentTextType,16, QFont::Normal);
         TextEditor->setFont(f);
+        CurrentTextSize = 16;
     }
 }
 
@@ -327,17 +339,25 @@ void ventanapredictor::on_actionRoyalGold_triggered()
     currentBackground = "background-color:lightseagreen;";
 }
 
+void ventanapredictor::on_actionPor_Defecto_Monospace_triggered()
+{
+    currentTextType = "Monospace";
+    QFont f("Monospace",CurrentTextSize, QFont::Normal);
+    TextEditor->setFont(f);
+}
+
 void ventanapredictor::on_actionBuscar_triggered()
 {
     if(!buscar)
-    {
-        buscar = new vbuscar(this);
+        {
+            buscar = new vbuscar(this);
 
-        connect(buscar, &vbuscar::FSignal,this, &ventanapredictor::signalR);
-        connect(buscar, &vbuscar::FSignalA,this, &ventanapredictor::signalRA);
-    }
+            connect(buscar, &vbuscar::FSignal,this, &ventanapredictor::signalR);
+            connect(buscar, &vbuscar::FSignalA,this, &ventanapredictor::signalRA);
+        }
 
-    buscar->show();
+        buscar->move(QApplication::desktop()->screen()->rect().center() - buscar->rect().center());
+        buscar->show();
 }
 
 void ventanapredictor::signalR(const QString text)
@@ -348,4 +368,11 @@ void ventanapredictor::signalR(const QString text)
 void ventanapredictor::signalRA(const QString textA)
 {
     TextEditor->find(textA);
+}
+
+void ventanapredictor::on_actionMostrar_Diccionario_triggered()
+{
+    vMostrar *mostrard = new vMostrar(this);
+    mostrard->recibir_diccionario(QString::fromStdString(nodo->to_str()));
+    mostrard->show();
 }

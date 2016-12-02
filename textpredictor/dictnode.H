@@ -1,8 +1,8 @@
 #ifndef DICTNODE_H
 #define DICTNODE_H
 
-#include </home/astrid/Escritorio/Aleph/aleph-1.6/tpl_tree_node.H>
-#include </home/astrid/Escritorio/Aleph/aleph-1.6/tpl_dynArray.H>
+#include </home/daniel/aleph/tpl_tree_node.H>
+#include </home/daniel/aleph/tpl_dynArray.H>
 using namespace std;
 
 class Cnode : public Tree_Node<char>
@@ -319,7 +319,7 @@ delete []ptr;
 
      str.pop_back();
    }
-   /**2.11 Words**/
+
    DynArray<string> words() const
    {
      DynArray<string> ret;

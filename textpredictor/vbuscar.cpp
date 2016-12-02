@@ -6,6 +6,10 @@ vbuscar::vbuscar(QWidget *parent) :
     ui(new Ui::vbuscar)
 {
     ui->setupUi(this);
+
+    setWindowTitle(tr("Buscar"));
+
+    statusBar()->setSizeGripEnabled(false);
 }
 
 vbuscar::~vbuscar()
@@ -15,13 +19,11 @@ vbuscar::~vbuscar()
 
 void vbuscar::on_Atras_clicked()
 {
-
-  emit FSignal(ui->buscarlineEdit->text());
+    emit FSignal(ui->buscarlineEdit->text());
 }
 
 void vbuscar::on_Adelante_clicked()
 {
     emit FSignalA(ui->buscarlineEdit->text());
-    // TextEditor->find(ui->SearchLineEdit->text());
-    //TextEditor->find(ui->SearchLineEdit->text(),QTextDocument::FindBackward) atras
+    //hola
 }

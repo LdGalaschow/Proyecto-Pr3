@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle(tr("Inicio"));
 }
 
 MainWindow::~MainWindow()
@@ -17,4 +18,17 @@ void MainWindow::on_titulo_clicked()
 {
     ventanapredictor *predictor = new ventanapredictor(this);
     predictor->show();
+}
+
+void MainWindow::on_ButtonCreditos_clicked()
+{
+    cred = new creditos(this);
+    cred->exec();
+
+}
+
+void MainWindow::on_ButtonLicencia_clicked()
+{
+    lic = new licencia(this);
+    lic->exec();
 }

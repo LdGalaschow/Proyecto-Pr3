@@ -16,26 +16,37 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     texteditpredictor.cpp \
     ventanapredictor.cpp \
-    vbuscar.cpp
+    vbuscar.cpp \
+    creditos.cpp \
+    licencia.cpp \
+    vmostrar.cpp
 
 HEADERS  += mainwindow.h \
     texteditpredictor.h \
     ventanapredictor.h \
     dictnode.H \
-    vbuscar.h
+    vbuscar.h \
+    creditos.h \
+    licencia.h \
+    vmostrar.h
 
 FORMS    += mainwindow.ui \
     ventanapredictor.ui \
-    vbuscar.ui
-
+    vbuscar.ui \
+    creditos.ui \
+    licencia.ui \
+    vmostrar.ui
 WARN = -Wall -Wextra -Wcast-align -Wno-sign-compare -Wno-write-strings \
-       -Wno-parentheses -Wno-invalid-source-encoding
+       -Wno-parentheses
 
+CXX +=/usr/bin/clang++
+CFLAGS        += -DDEBUG -D_GLIBCXX__PTHREADS -g $(OPT) -std=c++14 $(WARN) -Wno-invalid-source-encoding
+CXXFLAGS      += -DDEBUG -D_GLIBCXX__PTHREADS -g $(OPT) -std=c++14 $(WARN) -Wno-invalid-source-encoding
 
-CFLAGS += -g -O0 -std=c++14 $(WARN)
+INCLUDEPATH += /home/daniel/aleph
 
-CXXFLAGS += -g -O0 -std=c++14 $(WARN)
+LIBS += -L $(ALEPH) \
+       -lAleph -lm -lgsl -lgslcblas -lgmp -lmpfr -lasprintf -lpthread
 
-INCLUDEPATH += /home/astrid/Escritorio/Aleph/aleph-1.6
-
-LIBS += -L//home/astrid/Escritorio/Aleph/aleph-1.6 -lAleph -lm -lgsl -lgslcblas -lgmp -lmpfr -lpthread -lc
+RESOURCES += \
+    imagen.qrc

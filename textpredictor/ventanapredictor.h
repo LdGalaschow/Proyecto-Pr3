@@ -6,9 +6,11 @@
 #include <QtGui>
 #include <QFileDialog>
 #include<QFont>
+#include<QDesktopWidget>
 #include"texteditpredictor.h"
 #include"dictnode.H"
 #include"vbuscar.h"
+#include"vmostrar.h"
 
 namespace Ui {
 class ventanapredictor;
@@ -85,11 +87,15 @@ private slots:
 
     void on_actionRoyalGold_triggered();
 
+    void on_actionPor_Defecto_Monospace_triggered();
+
     void on_actionBuscar_triggered();
 
     void signalR(const QString text);
 
     void signalRA(const QString textA);
+
+    void on_actionMostrar_Diccionario_triggered();
 
 private:
     Ui::ventanapredictor *ui;
@@ -100,6 +106,7 @@ private:
     QString texto;
     QString currentBackground;
     QString currentTextType;
+    int CurrentTextSize;
     vbuscar *buscar;
 
 };
